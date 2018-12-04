@@ -10,10 +10,11 @@ const result = lines.reduce((obj, line, index) => {
 		k: Number(line.split(' ')[1]),
 		d: line.split(' ')
 			.slice(2)
-			.map((num) => Number(num)),
+			.map((num) => Number(num))
+			.sort((a, b) => b - a),
 	};
 	return {
 		...obj,
 		tests: [ ...obj.tests, test ],
 	};
-}, { tests: 0, tests: [] });
+}, { testQty: 0, tests: [] });
