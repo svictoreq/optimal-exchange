@@ -1,6 +1,7 @@
 const fs = require('fs');
+const utils = require('./utils/index.js');
 
-const input = fs.readFileSync('./input.txt', 'utf8');
+const input = fs.readFileSync('../assets/input.txt', 'utf8');
 const lines = input.split('\n');
 const result = lines.reduce((obj, line, index) => {
 	const val = `line${index}`;
@@ -11,7 +12,7 @@ const result = lines.reduce((obj, line, index) => {
 		d: line.split(' ')
 			.slice(2)
 			.map((num) => Number(num))
-			.sort((a, b) => b - a),
+			.sort((a, b) => a - b),
 	};
 	return {
 		...obj,
